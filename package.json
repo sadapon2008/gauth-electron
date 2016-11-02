@@ -1,27 +1,31 @@
 {
   "name": "gauth-electron",
   "version": "1.0.1",
-  "description": "",
+  "description": "gauth-electron",
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/electron .",
     "test": "echo \"Warning: no test specified\"",
 
     "clean": "rm -rf ./dist",
-    "clean:osx": "rm -rf ./dist/osx",
-    "clean:win": "rm -rf ./dist/win",
-
-    "pack": "npm run pack:osx && npm run build:win",
-    "pack:osx": "npm run clean:osx && electron-packager . \"gauth-electron\" --out=dist/osx --platform=darwin --arch=x64 --version=1.4.5 --icon=assets/osx/icon.icns --ignore=\"dist|assets\"",
-    "pack:win": "npm run clean:win && electron-packager . \"gauth-electron\" --out=dist/win --platform=win32 --arch=ia32 --version=1.4.5 --icon=assets/win/icon.ico --ignore=\"dist|assets\"",
-
-    "build": "npm run build:osx && npm run build:win",
-    "build:osx": "npm run pack:osx && electron-builder \"dist/osx/gauth-electron-darwin-x64/gauth-electron.app\" --platform=osx --out=\"dist/osx\" --config=builder.json",
-    "build:win": "npm run pack:win && electron-builder \"dist/win/gauth-electron-win32-ia32\" --platform=win --out=\"dist/win\" --config=builder.json",
-
-    "archive": "npm run archive:osx && npm run archive:win",
-    "archive:osx": "npm run build:osx && zip -j \"dist/osx/gauth-electron-osx.zip\" \"dist/osx/gauth-electron.dmg\"",
-    "archive:win": "npm run build:win && zip -j \"dist/win/gauth-electron-win.zip\" \"dist/win/gauth-electron-setup.exe\""
+    "pack": "npm run clean && build --mac --x64 --dir && build --win --ia32 --dir",
+    "dist": "npm run clean && build --mac --x64 && build --win --ia32",
+    "release": "npm run clean && build --mac --x64 && build --win --ia32"
+  },
+  "build": {
+    "appId": "org.sadapon2008.gauth-electron",
+    "dmg" : {
+      "background": "assets/osx/icon.png",
+      "icon": "assets/osx/icon.icns",
+      "icon-size": 80,
+      "contents": [
+        { "x": 438, "y": 344, "type": "link", "path": "/Applications" },
+        { "x": 192, "y": 344, "type": "file" }
+      ]
+    },
+    "win" : {
+      "icon" : "assets/win/icon.ico"
+    }
   },
   "keywords": [],
   "author": "sadapon2008",
