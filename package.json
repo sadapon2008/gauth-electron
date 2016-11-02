@@ -7,10 +7,8 @@
     "start": "node_modules/.bin/electron .",
     "test": "echo \"Warning: no test specified\"",
 
-    "clean": "rm -rf ./dist",
-    "pack": "npm run clean && build --mac --x64 --dir && build --win --ia32 --dir",
-    "dist": "npm run clean && build --mac --x64 && build --win --ia32",
-    "release": "npm run clean && build --mac --x64 && build --win --ia32"
+    "release:win": "powershell -Command \"Remove-Item -r -Force ./dist\" && build --win --ia32",
+    "release:mac": "rm -rf ./dist && build --mac --x64"
   },
   "build": {
     "appId": "org.sadapon2008.gauth-electron",
