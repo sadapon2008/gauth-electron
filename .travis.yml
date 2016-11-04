@@ -28,7 +28,7 @@ deploy:
   api_key:
     secure: PuBLO7cGoea5YPMENVYJMJYyp101PgIn1jC0+H1stJNpnMDDPaDxL1zGoz5whHIgAUELGWEFp13NDLlB06UIbcwH5uK7lQJEyIuaYeNsAI5JvmkeCh+WJPCd0tX1zeTczJ4EKMfDchaSUgyFS3LygiPTYINJJjAaeCvdE7EznJY8AlORDHe2zyiO/jhsBuJrh0lKrRgYbVPkVvjegQFkdOAFnSfhpAXtNj+Yuf4sSiKpPlETSw8JWDJhOP3w/QPVEwQl3I75scals2pFBtc5xqoBVvNFk5WY9QjQR9KHCNrP6MN0T2ftzx1UTBGFetV0dyCfCYOtvi0kuxLzdELrqCIldJJGwQx2Pw1NF00GNUq/0JznvBIsZKsyFxGox4fjcdbumq171ThTBXS5RimnSdOZa6/wWbkYJfFPwOsV1QgSWoU51o9EJolzaV79hoR1HPizLPHfOudwD0/jouh1gP5uIA8DpsQcYPcuYtRZkWv7ajwrAwfp60RBrYFX8EsbXY6bcFt6a6MZvu3dNXrYAxva0W2pO/gzXmyWkdID6LJDRY3ozhtG5VCdW9CM6WKf28bOyVGQ9Afw4dM9CW1yzs56QyscT9IDzvdGTLSl9KlBhL4zCd0aNqJKXNqbmj3Y+96G0IhWbi9Uno22ucTrmrvLsQKMBK2lu5Bew0a+xCo=
   file:
-    - dist/mac/gauth-electron-1.0.1.dmg
+    - dist/mac/gauth-electron-1.0.2.dmg
   skip_cleanup: true
   on:
     repo: sadapon2008/gauth-electron
