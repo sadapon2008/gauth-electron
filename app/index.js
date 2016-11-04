@@ -69,6 +69,7 @@ if (handleStartupEvent()) {
 var BrowserWindow = electron.BrowserWindow;
 // メインウィンドウはGCされないようにグローバル宣言
 var mainWindow = null;
+var readyFlag = false;
 
 function createWindow() {
   mainWindow = new BrowserWindow({width: 800, height: 600, webPreferences: {nodeIntegration: false}});
@@ -81,7 +82,10 @@ function createWindow() {
 }
 
 // Electronの初期化完了後に実行
-app.on('ready', createWindow);
+app.on('ready', function() {
+  readyFlag = true;
+  createWindow();
+});
 
 // 全てのウィンドウが閉じたら終了
 app.on('window-all-closed', function() {
@@ -91,7 +95,7 @@ app.on('window-all-closed', function() {
 });
 
 app.on('activate', function() {
-  if (mainWindow === null) {
+  if (readyFlag && (mainWindow === null)) {
     createWindow();
   }
 });
