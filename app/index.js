@@ -4,6 +4,7 @@ if (require('electron-squirrel-startup')) return;
 // アプリケーションをコントロールするモジュール
 var electron = require('electron');
 var app = electron.app;
+var Menu = electron.Menu;
 
 var handleStartupEvent = function() {
   if (process.platform !== 'win32') {
@@ -79,6 +80,41 @@ function createWindow() {
   mainWindow.on('closed', function() {
     mainWindow = null;
   });
+
+  var templateMenu = [
+    {
+      label: 'File',
+      submenu: [
+        {
+          role: 'quit'
+        }
+      ]
+    },
+    {
+      label: 'Edit',
+      submenu: [
+        {
+          role: 'undo'
+        },
+        {
+          role: 'redo'
+        },
+        {
+          type: 'separator',
+        },
+        {
+          role: 'cut'
+        },
+        {
+          role: 'copy'
+        },
+        {
+          role: 'paste'
+        }
+      ]
+    }
+  ];
+  Menu.setApplicationMenu(Menu.buildFromTemplate(templateMenu));
 }
 
 // Electronの初期化完了後に実行
