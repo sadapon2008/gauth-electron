@@ -11,6 +11,7 @@
   },
   "build": {
     "appId": "org.sadapon2008.gauth-electron",
+    "publish": [],
     "dmg": {
       "background": "assets/osx/icon.png",
       "icon": "assets/osx/icon.icns",
@@ -26,7 +27,8 @@
           "y": 344,
           "type": "file"
         }
-      ]
+      ],
+      "publish": []
     },
     "win": {
       "icon": "assets/win/icon.ico"
