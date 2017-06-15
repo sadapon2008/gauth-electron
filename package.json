@@ -1,6 +1,6 @@
 {
   "name": "gauth-electron",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "gauth-electron",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,6 @@
     "dmg": {
       "background": "assets/osx/icon.png",
       "icon": "assets/osx/icon.icns",
-      "icon-size": 80,
       "contents": [
         {
           "x": 438,
@@ -37,9 +36,9 @@
   "author": "sadapon2008",
   "license": "GPL-3.0",
   "devDependencies": {
-    "electron-builder": "^7.15.2",
-    "electron-packager": "^8.2.0",
-    "electron-prebuilt": "^1.4.5"
+    "electron-builder": "^18.6.2",
+    "electron-packager": "^8.7.1",
+    "electron-prebuilt": "^1.4.13"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
